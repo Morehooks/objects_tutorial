@@ -45,11 +45,20 @@ class Notebook:
 
     def modify_memo(self, note_id, memo):
         """Find the note with the given id and change its memo to the given value."""
-        self._find_note(note_id).memo = memo
+        note = self._find_note(note_id)
+        if note:
+            note.memo = memo
+            return True
+        return False
 
     def modify_tag(self, note_id, tags):
         """Find the note with the given id and change its memo to the given value."""
         self._find_note(note_id).tags = tags
+        note = self._find_note(note_id)
+        if note:
+            note.tags = tags
+            return True
+        return False
 
     def search(self, filter):
         """Find all notes that match the given filter string."""
