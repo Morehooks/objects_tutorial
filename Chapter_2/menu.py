@@ -58,7 +58,7 @@ class Menu:
         if memo:
             self.notebook.modify_memo(id, memo)
         if tags:
-            self.notebook.modify_tags(id, tags)
+            self.notebook.modify_tag(id, tags)
 
     def quit(self):
         print("Thank you for using your notebook today.")
